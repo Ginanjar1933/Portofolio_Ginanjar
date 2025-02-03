@@ -1,0 +1,200 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, #1a1a2e, #0f0f3d);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+#scene {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+}
+
+#cube {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(45deg, #ffcc00, #ff6600);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.8);
+    transition: transform 0.5s ease-in-out;
+    text-transform: uppercase;
+}
+
+#cube:hover {
+    transform: scale(1.1) rotateY(360deg);
+}
+
+#portfolio {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out, visibility 0s 1s;
+    padding: 20px;
+    max-width: 80%;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #0f0f3d, #1e1e5e);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    position: relative;
+}
+
+.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease-in-out;
+}
+
+@keyframes snowfall {
+    from { transform: translateY(0); }
+    to { transform: translateY(100vh); }
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    background-color: white;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: snowfall linear infinite;
+}
+
+.profile-photo {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 5px solid #ffcc00;
+    display: block;
+    margin: 0 auto 20px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.9);
+}
+
+header {
+    padding-top: 280px;
+    margin-top: -40px;
+}
+
+header h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #ffcc00;
+    text-shadow: 4px 4px 15px rgba(255, 204, 0, 0.9), -4px -4px 15px rgba(255, 100, 0, 0.9);
+}
+
+#about {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#about p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 10px 0;
+}
+
+h2 {
+    margin-top: 10px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #ffcc00;
+    text-shadow: 3px 3px 10px rgba(255, 204, 0, 0.8);
+}
+
+#skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+#skills li {
+    font-size: 20px;
+    background-color: #ff6600;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#skills li:hover {
+    background-color: #ffcc00;
+}
+
+.skills-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.skills-gallery img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: block;
+}
+
+.skills-gallery p {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #ccc;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #portfolio {
+        max-width: 95%;
+        margin: 5vh auto;
+    }
+    .profile-photo {
+        width: 200px;
+        height: 200px;
+        top: 10px;
+    }
+    header {
+        padding-top: 230px;
+    }
+    header h1 {
+        font-size: 30px;
+    }
+    #about p {
+        font-size: 16px;
+    }
+    .skills-gallery img {
+        width: 200px;
+        height: 200px;
+    }
+}
